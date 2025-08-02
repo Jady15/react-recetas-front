@@ -1,0 +1,252 @@
+.hero-section {
+    padding: 80px 0 60px;
+    background: linear-gradient(135deg, #E8F5E8 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #FF6B35 20%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #4CAF50;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: #343A40;
+}
+
+.accent-text {
+    color: #4CAF50;
+    position: relative;
+}
+
+.accent-text::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #FF6B35;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #6C757D;
+    margin-bottom: 36px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* Imagen del Hero / Vista previa de receta */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.floating-card {
+  animation: float 4s ease-in-out infinite;
+}
+
+.recipe-preview {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  width: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #FF6B35);
+}
+
+.recipe-image-placeholder {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #E8F5E8 0%, #C8E6C9 100%);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-image-placeholder::before {
+  content: '🥗';
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+.recipe-info h4 {
+  color: #343A40;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.recipe-info p {
+  color: #6C757D;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.recipe-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background: #E8F5E8;
+  color: #4CAF50;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Sección de Estadísticas */
+.stats-section {
+  padding: 60px 0;
+  background: #FFFFFF;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: #F8F9FA;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.stat-card:hover {
+  border-color: #4CAF50;
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #6C757D;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Animaciones */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 60px 0 40px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stats-grid {
+    gap: 20px;
+  }
+  
+  .stat-card {
+    padding: 24px 16px;
+  }
+}
